@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guess My Number</title>
+        <link rel="stylesheet" href="./css/main.css" />
+        <link
+            rel="icon"
+            href="./img/tabicon-white-cyan-512px.png"
+            type="image/png"
+        />
+    </head>
+
+    <body draggable="true">
+        <div class="border" id="topBorder"></div>
+        <div class="border" id="bottomBorder"></div>
+        <div class="border" id="leftBorder"></div>
+        <div class="border" id="rightBorder"></div>
+        <h4 style="margin-top: 10px" id="dateTime"></h4>
+        <div id="mainContainer">
+            <h1 class="title">Guess My Number</h1>
+            <div id="gameInterface">
+                <div id="leftSide" class="side">
+                    <div id="display">0</div>
+                    <div id="message"></div>
+                    <div id="playAgain" onclick="playAgain()">Play again?</div>
+                </div>
+                <div id="rightSide" class="side">
+                    <div id="preferences">
+                        <div width="100%">Generate random number</div>
+                            <label for="startFrom">From:</label>
+                            <input
+                                type="text"
+                                name="startFrom"
+                                id="startFrom"
+                                value="1"
+                            />
+                            <label for="to">To:</label>
+                            <input
+                                type="text"
+                                name="to"
+                                id="toValue"
+                                value="100"
+                            />
+                            <span
+                                id="generateButton"
+                                onclick="generateRandomNumber(startFrom, toValue)"
+                            >
+                                Generate
+                            </span>
+                        </form>
+                    </div>
+                    <div class="buttonsContainer">
+                        <div class="button" onclick="updateDisplay(1)">
+                            <p>1</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(2)">
+                            <p>2</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(3)">
+                            <p>3</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(4)">
+                            <p>4</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(5)">
+                            <p>5</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(6)">
+                            <p>6</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(7)">
+                            <p>7</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(8)">
+                            <p>8</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(9)">
+                            <p>9</p>
+                        </div>
+                        <div class="button" onclick="updateDisplay(0)">
+                            <p>0</p>
+                        </div>
+                        <div
+                            class="button"
+                            id="guessButton"
+                            onclick="guessNumber()"
+                        >
+                            <p>Guess!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a
+            href="https://www.flaticon.com/free-icons/question-mark"
+            title="question mark icons"
+            style="
+                position: absolute;
+                color: white;
+                background-color: darkorange;
+                left: 1%;
+                bottom: 2.3%;
+            "
+            >Question mark icons created by Freepik - Flaticon</a
+        >
+        <script src="./js/main.js"></script>
+    </body>
+</html>
