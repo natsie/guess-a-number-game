@@ -36,6 +36,18 @@ function playAgain() {
     messageElement.innerHTML = "";
     replayElement.style.display = "none";
 }
+function updateColors(color) {
+	document.getElementById("topBorder").style.backgroundColor =
+        color;
+    document.getElementById("bottomBorder").style.backgroundColor =
+        color;
+    document.getElementById("leftBorder").style.backgroundColor =
+        color;
+    document.getElementById("rightBorder").style.backgroundColor =
+        color;
+    messageElement.style.backgroundColor = color;
+    messageElement.style.color = "white";
+}
 function generateRandomNumber(startFrom, endValue) {
     randomNumber = Math.trunc(
         Math.random() * (Number(endValue.value) - 1) + Number(startFrom.value),
@@ -46,45 +58,18 @@ function guessNumber() {
     userInput = Number(display.innerHTML);
     if (userInput === randomNumber) {
         console.log("Executed");
-        document.getElementById("topBorder").style.backgroundColor =
-            correctColor;
-        document.getElementById("bottomBorder").style.backgroundColor =
-            correctColor;
-        document.getElementById("leftBorder").style.backgroundColor =
-            correctColor;
-        document.getElementById("rightBorder").style.backgroundColor =
-            correctColor;
-        messageElement.style.backgroundColor = correctColor;
-        messageElement.style.color = "white";
+        updateColors(correctColor)
         messageElement.innerHTML = `Yay... That's my number!`;
         replayElement.style.display = "block";
         resetDisplay = true;
     } else if (userInput > randomNumber) {
         console.log("Executed");
-        document.getElementById("topBorder").style.backgroundColor =
-            incorrectColor;
-        document.getElementById("bottomBorder").style.backgroundColor =
-            incorrectColor;
-        document.getElementById("leftBorder").style.backgroundColor =
-            incorrectColor;
-        document.getElementById("rightBorder").style.backgroundColor =
-            incorrectColor;
-        messageElement.style.backgroundColor = incorrectColor;
-        messageElement.style.color = "white";
+        updateColors(incorrectColor)
         messageElement.innerHTML = `Hmm... You went a bit high there.`;
         display.innerHTML = 0;
     } else if (userInput < randomNumber) {
         console.log("Executed");
-        document.getElementById("topBorder").style.backgroundColor =
-            incorrectColor;
-        document.getElementById("bottomBorder").style.backgroundColor =
-            incorrectColor;
-        document.getElementById("leftBorder").style.backgroundColor =
-            incorrectColor;
-        document.getElementById("rightBorder").style.backgroundColor =
-            incorrectColor;
-        messageElement.style.backgroundColor = incorrectColor;
-        messageElement.style.color = "white";
+        updateColors(incorrectColor)
         messageElement.innerHTML = `Umm... That's a bit low.`;
         display.innerHTML = 0;
     }
