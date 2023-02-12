@@ -100,6 +100,7 @@ body {
     width: 33.33%;
     text-align: center;
     cursor: default;
+	transition-duration: 750ms;
 }
 .button > p {
     margin: 10%;
@@ -111,6 +112,7 @@ body {
 #generateButton:focus,
 #generateButton:active {
     background-color: darkgray;
+	transition-duration: 750ms;
 }
 #guessButton {
     width: 100%;
