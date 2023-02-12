@@ -34,6 +34,7 @@ function playAgain() {
     display.innerHTML = "0";
     randomNumber = 0;
     messageElement.innerHTML = "";
+	messageElement.style.display = "none";
     replayElement.style.display = "none";
 }
 function updateColors(color) {
@@ -55,11 +56,13 @@ function generateRandomNumber(startFrom, endValue) {
     generateButton.innerHTML = "Generated!";
 }
 function guessNumber() {
+	messageElement.style.display = "block";
     userInput = Number(display.innerHTML);
     if (userInput === randomNumber) {
         console.log("Executed");
         updateColors(correctColor)
         messageElement.innerHTML = `Yay... That's my number!`;
+		messageElement.style.display = "block";
         replayElement.style.display = "block";
         resetDisplay = true;
     } else if (userInput > randomNumber) {
