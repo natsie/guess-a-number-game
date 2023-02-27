@@ -49,12 +49,21 @@ function updateColors(color) {
     messageElement.style.backgroundColor = color;
     messageElement.style.color = "white";
 }
-function generateRandomNumber(startFrom, endValue) {
-    randomNumber = Math.trunc(
-        Math.random() * (Number(endValue.value) - 1) + Number(startFrom.value),
-    );
+function generateRandomNumber() {
+	let difference = Number(toValue.value) - Number(startFrom.value);
+    if (difference === 0) {
+        randomNumber = Number(startFrom.value)
+    } else {
+        let generatedNumber = Math.floor(Math.random() * difference) + 1;
+        randomNumber = Number(startFrom.value) + generatedNumber;
+        if (Math.random() >= 0.5 && randomNumber === Number(startFrom.value) + 1) {
+            randomNumber = Number(startFrom.value);
+        }
+    };
+    // console.log(randomNumber);
     generateButton.innerHTML = "Generated!";
 }
+
 function guessNumber() {
 	messageElement.style.display = "block";
     userInput = Number(display.innerHTML);
