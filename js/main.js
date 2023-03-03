@@ -27,67 +27,64 @@ function updateDisplay(value) {
     } else {
         display.innerHTML += value;
     }
-    if (generateButton.innerHTML === "Generated!")
-        generateButton.innerHTML = "Generate";
+    if (generateButton.innerHTML === "Generated!") generateButton.innerHTML = "Generate";
 }
 function playAgain() {
     display.innerHTML = "0";
     randomNumber = 0;
     messageElement.innerHTML = "";
-	messageElement.style.display = "none";
+    messageElement.style.display = "none";
     replayElement.style.display = "none";
 }
 function updateColors(color) {
-	document.getElementById("topBorder").style.backgroundColor =
-        color;
-    document.getElementById("bottomBorder").style.backgroundColor =
-        color;
-    document.getElementById("leftBorder").style.backgroundColor =
-        color;
-    document.getElementById("rightBorder").style.backgroundColor =
-        color;
+    document.getElementById("topBorder").style.backgroundColor = color;
+    document.getElementById("bottomBorder").style.backgroundColor = color;
+    document.getElementById("leftBorder").style.backgroundColor = color;
+    document.getElementById("rightBorder").style.backgroundColor = color;
     messageElement.style.backgroundColor = color;
     messageElement.style.color = "white";
 }
 function generateRandomNumber() {
-	let difference = Number(toValue.value) - Number(startFrom.value);
+    let difference = Number(toValue.value) - Number(startFrom.value);
     if (difference === 0) {
-        randomNumber = Number(startFrom.value)
+        randomNumber = Number(startFrom.value);
     } else {
         let generatedNumber = Math.floor(Math.random() * difference) + 1;
         randomNumber = Number(startFrom.value) + generatedNumber;
         if (Math.random() >= 0.5 && randomNumber === Number(startFrom.value) + 1) {
             randomNumber = Number(startFrom.value);
         }
-    };
+    }
     // console.log(randomNumber);
     generateButton.innerHTML = "Generated!";
 }
 
 function guessNumber() {
-	messageElement.style.display = "block";
+    messageElement.style.display = "block";
     userInput = Number(display.innerHTML);
     if (userInput === randomNumber) {
         console.log("Executed");
-        updateColors(correctColor)
+        updateColors(correctColor);
         messageElement.innerHTML = `Yay... That's my number!`;
-		messageElement.style.display = "block";
+        messageElement.style.display = "block";
         replayElement.style.display = "block";
         resetDisplay = true;
     } else if (userInput > randomNumber) {
         console.log("Executed");
-        updateColors(incorrectColor)
+        updateColors(incorrectColor);
         messageElement.innerHTML = `Hmm... You went a bit high there.`;
         display.innerHTML = 0;
     } else if (userInput < randomNumber) {
         console.log("Executed");
-        updateColors(incorrectColor)
+        updateColors(incorrectColor);
         messageElement.innerHTML = `Umm... That's a bit low.`;
         display.innerHTML = 0;
     }
 }
 
 /*
+// Provision for timer with demo code
+
 let hour = 0;
 let minute = 0;
 let second = 0;
@@ -144,6 +141,8 @@ function returnData(input) {
 */
 
 /*
+// Provision for cookies with demo code
+
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
