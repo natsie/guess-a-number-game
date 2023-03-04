@@ -6,11 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Guess My Number</title>
         <link rel="stylesheet" href="./css/main.css" />
-        <link
-            rel="icon"
-            href="./img/tabicon-white-cyan-512px.png"
-            type="image/png"
-        />
+        <link rel="icon" href="./img/tabicon-white-cyan-512px.png" type="image/png" />
     </head>
 
     <body draggable="true">
@@ -22,6 +18,14 @@
         <div id="mainContainer">
             <h1 class="title">Guess My Number</h1>
             <div id="gameInterface">
+                <p id="timer">
+                    <strong>
+                        Timer: <span id="hour">00</span>:<span id="minute">00</span>:<span id="second"
+                            >00</span
+                        >:<span id="millisecond">000</span>
+                    </strong>
+                </p>
+                <br />
                 <div id="leftSide" class="side">
                     <div id="display">0</div>
                     <div id="message"></div>
@@ -30,24 +34,13 @@
                 <div id="rightSide" class="side">
                     <div id="preferences">
                         <div width="100%">Generate random number</div>
-                            <label for="startFrom">From:</label>
-                            <input
-                                type="text"
-                                name="startFrom"
-                                id="startFrom"
-                            />
-                            <label for="toValue">To:</label>
-                            <input
-                                type="text"
-                                name="to"
-                                id="toValue"
-                            />
-                            <span
-                                id="generateButton"
-                                onclick="generateRandomNumber(startFrom, toValue)"
-                            >
-                                Generate
-                            </span>
+                        <label for="startFrom">From:</label>
+                        <input type="text" name="startFrom" id="startFrom" />
+                        <label for="toValue">To:</label>
+                        <input type="text" name="to" id="toValue" />
+                        <span id="generateButton" onclick="generateRandomNumber(startFrom, toValue)">
+                            Generate
+                        </span>
                     </div>
                     <div class="buttonsContainer">
                         <div class="button" onclick="updateDisplay(1)">
@@ -80,29 +73,21 @@
                         <div class="button" onclick="updateDisplay(0)">
                             <p>0</p>
                         </div>
-                        <div
-                            class="button"
-                            id="guessButton"
-                            onclick="guessNumber()"
-                        >
+                        <div class="button" id="guessButton" onclick="guessNumber()">
                             <p>Guess!</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		<br>
-		<br>
-		<br>
-		<br>
+        <br />
+        <br />
+        <br />
+        <br />
         <a
             href="https://www.flaticon.com/free-icons/question-mark"
             title="question mark icons"
-            style="
-                color: white;
-				margin-left: 10px;
-                background-color: darkorange;
-            "
+            style="color: white; margin-left: 10px; background-color: darkorange"
             >Question mark icons created by Freepik - Flaticon</a
         >
         <script src="./js/main.js"></script>

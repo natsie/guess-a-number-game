@@ -36,6 +36,7 @@ body {
 }
 #gameInterface {
     display: flex;
+    flex-wrap: wrap;
 }
 .side {
     width: 50%;
@@ -118,4 +119,9 @@ body {
 }
 #guessButton > p {
     margin: 5%;
+}
+#timer {
+    width: 85%;
+    margin: -25px auto 0px auto;
+    text-align: right;
 }
