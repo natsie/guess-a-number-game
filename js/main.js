@@ -40,6 +40,7 @@ function playAgain() {
     messageElement.innerHTML = "";
     messageElement.style.display = "none";
     replayElement.style.display = "none";
+    reset();
 }
 function updateColors(color) {
     document.getElementById("topBorder").style.backgroundColor = color;
@@ -60,7 +61,6 @@ function generateRandomNumber() {
             randomNumber = Number(startFrom.value);
         }
     }
-    reset();
     start();
     generateButton.innerHTML = "Generated!";
 }
