@@ -50,19 +50,20 @@ function updateColors(color) {
     messageElement.style.backgroundColor = color;
     messageElement.style.color = "white";
 }
-function generateRandomNumber() {
-    let difference = Number(toValue.value) - Number(startFrom.value);
+function generateRandomNumber(startFrom, to) {
+    let difference = Number(to) - Number(startFrom);
     if (difference === 0) {
-        randomNumber = Number(startFrom.value);
+        randomNumber = Number(startFrom);
     } else {
         let generatedNumber = Math.floor(Math.random() * difference) + 1;
-        randomNumber = Number(startFrom.value) + generatedNumber;
-        if (Math.random() >= 0.5 && randomNumber === Number(startFrom.value) + 1) {
-            randomNumber = Number(startFrom.value);
+        randomNumber = Number(startFrom) + generatedNumber;
+        if (Math.random() >= 0.5 && randomNumber === Number(startFrom) + 1) {
+            randomNumber = Number(startFrom);
         }
     }
-    start();
+    console.log(randomNumber);
     generateButton.innerHTML = "Generated!";
+    start();
 }
 
 function guessNumber() {
